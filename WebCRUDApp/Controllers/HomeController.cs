@@ -1,0 +1,54 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+using WebCRUDApp.Models;
+using WebCRUDApp.Models.Contexto;
+
+namespace WebCRUDApp.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+        public Context _Context;
+
+        public HomeController(Context Contexto)
+        {
+            _Context = Contexto;
+        }
+
+
+        /*public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }*/
+
+        public IActionResult Index()
+        {
+            listaDeCargos();
+            //ViewBag.Lista = new SelectList(_Context.tb_Cargo, "CargoId", "NomeCargo");
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public void listaDeCargos()
+        {
+           ViewBag.Lista = new SelectList(_Context.tb_Cargo, "CargoId", "NomeCargo");
+        }
+    }
+
+}
