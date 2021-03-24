@@ -11,7 +11,7 @@ namespace WebCRUDApp.Controllers
 {
     public class PessoaController : Controller
     {
-        
+
         public Context _Context;
 
         public PessoaController(Context Contexto)
@@ -21,11 +21,26 @@ namespace WebCRUDApp.Controllers
 
         public IActionResult Index()
         {
-            var lista = _Context.tb_Pessoa.ToList();
-            listaDeCargos();
-            //var listaPessoas = _Context.tb_Pessoa.ToList();
+            List<FuncViewModel> ListaFuncVM = new List<FuncViewModel>();
+
+
+            var listaFunc = (from p in _Context.tb_Pessoa
+                             join c in _Context.tb_Cargo on p.CargoId equals c.CargoId
+                             select new { p.Id, p.Nome, p.SobreNome, p.DataNascimento, c.NomeCargo }).ToList();
+
+            foreach (var item in listaFunc)
+            {
+                FuncViewModel funcVM = new FuncViewModel();
+                funcVM.Id = item.Id;
+                funcVM.Nome = item.Nome;
+                funcVM.SobreNome = item.SobreNome;
+                funcVM.DataNascimento = item.DataNascimento;
+                funcVM.NomeCargo = item.NomeCargo;
+                ListaFuncVM.Add(funcVM);
+            }
+            //var lista = _Context.tb_Pessoa.ToList();                               
             //return View(await _Context.tb_Pessoa.ToListAsync()); ;
-            return View(lista);
+            return View(ListaFuncVM);
         }
         public IActionResult Create()
         {
@@ -36,22 +51,23 @@ namespace WebCRUDApp.Controllers
         [HttpPost]
         public IActionResult Create(Pessoas p)
         {
-            
+
             if (ModelState.IsValid)
             {
-                
+
                 _Context.Add(p);
                 _Context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            
+
             return View(p);
         }
 
         public IActionResult Edit(int id)
         {
-            listaDeCargos();
+
             var pessoa = _Context.tb_Pessoa.Find(id);
+            listaDeCargos();
             return View(pessoa);
 
         }

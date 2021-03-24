@@ -294,7 +294,6 @@ C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\Delete.cshtml.g.cs
 C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\Details.cshtml.g.cs
 C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\Edit.cshtml.g.cs
-C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\Index.cshtml.g.cs
 C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -308,3 +307,4 @@ C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDAp
 C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.pdb
 C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.genruntimeconfig.cache
 C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\Create.cshtml.g.cs
+C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\Index.cshtml.g.cs

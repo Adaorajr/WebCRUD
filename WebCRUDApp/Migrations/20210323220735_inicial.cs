@@ -2,7 +2,7 @@
 
 namespace WebCRUDApp.Migrations
 {
-    public partial class DropDown : Migration
+    public partial class inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,7 +28,7 @@ namespace WebCRUDApp.Migrations
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SobreNome = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DataNascimento = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CargoId = table.Column<int>(type: "int", nullable: true)
+                    CargoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -38,7 +38,7 @@ namespace WebCRUDApp.Migrations
                         column: x => x.CargoId,
                         principalTable: "tb_Cargo",
                         principalColumn: "CargoId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

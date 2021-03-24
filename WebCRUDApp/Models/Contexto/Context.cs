@@ -14,6 +14,8 @@ namespace WebCRUDApp.Models.Contexto
         { }
         public DbSet<Pessoas> tb_Pessoa { get; set; }
         public DbSet<Cargo> tb_Cargo { get; set; }
+        
+        
      
     }
 }

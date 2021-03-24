@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebCRUDApp.Models.Entidades.Pessoas>
+﻿@model IEnumerable<WebCRUDApp.Models.Entidades.FuncViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -22,14 +22,13 @@
                 @Html.DisplayNameFor(model => model.DataNascimento)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CargoId)
+                @Html.DisplayNameFor(model => model.NomeCargo)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
+@foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Nome)
@@ -41,8 +40,7 @@
                 @Html.DisplayFor(modelItem => item.DataNascimento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CargoId)
-                
+                @Html.DisplayFor(modelItem => item.NomeCargo)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
@@ -50,6 +48,6 @@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-        }
+}
     </tbody>
 </table>
