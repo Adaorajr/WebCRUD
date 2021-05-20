@@ -9,8 +9,8 @@ using WebCRUDApp.Models.Contexto;
 namespace WebCRUDApp.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210323220735_inicial")]
-    partial class inicial
+    [Migration("20210520160112_teste")]
+    partial class teste
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,7 +28,9 @@ namespace WebCRUDApp.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("NomeCargo")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.HasKey("CargoId");
 
@@ -46,13 +48,18 @@ namespace WebCRUDApp.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("DataNascimento")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.Property<string>("SobreNome")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.HasKey("Id");
 

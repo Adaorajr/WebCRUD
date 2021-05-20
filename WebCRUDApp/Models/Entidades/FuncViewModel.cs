@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebCRUDApp.Models.Entidades
 {
+    [Keyless]
     public class FuncViewModel
-    {
-        
-        public int FuncViewModelId { get; set; }        
+    {      
         public string Nome { get; set; }       
         public string SobreNome { get; set; }
         [Display(Name = "Nascimento")]

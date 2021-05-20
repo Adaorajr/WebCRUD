@@ -2,7 +2,7 @@
 
 namespace WebCRUDApp.Migrations
 {
-    public partial class inicial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,7 @@ namespace WebCRUDApp.Migrations
                 {
                     CargoId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NomeCargo = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    NomeCargo = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -25,9 +25,9 @@ namespace WebCRUDApp.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SobreNome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DataNascimento = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Nome = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
+                    SobreNome = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
+                    DataNascimento = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CargoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -44,7 +44,8 @@ namespace WebCRUDApp.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_tb_Pessoa_CargoId",
                 table: "tb_Pessoa",
-                column: "CargoId");
+                column: "CargoId",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

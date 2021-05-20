@@ -13,5 +13,6 @@ namespace WebCRUDApp.Models.Entidades
         [StringLength(40, MinimumLength = 2)]
         [Required(ErrorMessage = "O Cargo é obrigatório!")]
         public string NomeCargo { get; set; }
+
     }
 }

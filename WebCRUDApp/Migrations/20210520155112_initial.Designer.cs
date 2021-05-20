@@ -9,8 +9,8 @@ using WebCRUDApp.Models.Contexto;
 namespace WebCRUDApp.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20210324031729_DataAnnotations")]
-    partial class DataAnnotations
+    [Migration("20210520155112_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,7 +28,9 @@ namespace WebCRUDApp.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("NomeCargo")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.HasKey("CargoId");
 
@@ -61,7 +63,8 @@ namespace WebCRUDApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CargoId");
+                    b.HasIndex("CargoId")
+                        .IsUnique();
 
                     b.ToTable("tb_Pessoa");
                 });
@@ -69,12 +72,17 @@ namespace WebCRUDApp.Migrations
             modelBuilder.Entity("WebCRUDApp.Models.Entidades.Pessoas", b =>
                 {
                     b.HasOne("WebCRUDApp.Models.Entidades.Cargo", "Cargo")
-                        .WithMany()
-                        .HasForeignKey("CargoId")
+                        .WithOne("Pessoas")
+                        .HasForeignKey("WebCRUDApp.Models.Entidades.Pessoas", "CargoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Cargo");
+                });
+
+            modelBuilder.Entity("WebCRUDApp.Models.Entidades.Cargo", b =>
+                {
+                    b.Navigation("Pessoas");
                 });
 #pragma warning restore 612, 618
         }

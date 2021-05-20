@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sarin\\Documents\\WebCRUDApp\\WebCRUDApp\\WebCRUDApp.csproj": {}
+    "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\webcrudapp\\WebCRUDApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sarin\\Documents\\WebCRUDApp\\WebCRUDApp\\WebCRUDApp.csproj": {
+    "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\webcrudapp\\WebCRUDApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sarin\\Documents\\WebCRUDApp\\WebCRUDApp\\WebCRUDApp.csproj",
+        "projectUniqueName": "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\webcrudapp\\WebCRUDApp.csproj",
         "projectName": "WebCRUDApp",
-        "projectPath": "C:\\Users\\sarin\\Documents\\WebCRUDApp\\WebCRUDApp\\WebCRUDApp.csproj",
-        "packagesPath": "C:\\Users\\sarin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sarin\\Documents\\WebCRUDApp\\WebCRUDApp\\obj\\",
+        "projectPath": "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\webcrudapp\\WebCRUDApp.csproj",
+        "packagesPath": "C:\\Users\\adao.junior\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\webcrudapp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\sarin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adao.junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +29,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,8 +40,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.90, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.4, )"
@@ -83,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

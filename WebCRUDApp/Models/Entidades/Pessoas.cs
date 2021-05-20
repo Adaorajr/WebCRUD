@@ -25,10 +25,10 @@ namespace WebCRUDApp.Models.Entidades
         [Display(Name = "Data Nascimento")]
         [Required(ErrorMessage ="A data de Nascimento é obrigatória!")]      
         public string DataNascimento { get; set; }
-        public int CargoId { get; set; }       
 
-        
+       
         [ForeignKey("CargoId")]
+        public int CargoId { get; set; }       
         public Cargo Cargo{ get; set; }
        
         
