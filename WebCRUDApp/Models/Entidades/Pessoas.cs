@@ -20,18 +20,12 @@ namespace WebCRUDApp.Models.Entidades
         [StringLength(40, MinimumLength = 2)]
         [Required(ErrorMessage = "O SobreNome é obrigatório!")]
         public string SobreNome { get; set; }
-        //[DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
-        [DataType(DataType.Date)]       
-        [Display(Name = "Data Nascimento")]
-        [Required(ErrorMessage ="A data de Nascimento é obrigatória!")]      
-        public string DataNascimento { get; set; }
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        [DataType(DataType.Date, ErrorMessage="Data em formato inválido")]               
+        public DateTime DataNascimento { get; set; }
 
-       
         [ForeignKey("CargoId")]
         public int CargoId { get; set; }       
-        public Cargo Cargo{ get; set; }
-       
-        
+        public Cargo Cargo{ get; set; }            
     }
-
 }

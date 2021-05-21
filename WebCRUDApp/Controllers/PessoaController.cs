@@ -80,10 +80,11 @@ namespace WebCRUDApp.Controllers
 
         public IActionResult Edit(int id)
         {
-
-            var pessoa = _Context.tb_Pessoa.Find(id);
             listaDeCargos();
-            return View(pessoa);
+            var pessoa = _Context.tb_Pessoa.Find(id);
+            
+            return View(pessoa); 
+               
 
         }
         [HttpPost]
@@ -94,17 +95,27 @@ namespace WebCRUDApp.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Delete(int id)
-        {
-            var pessoa = _Context.tb_Pessoa.Find(id);
-            return View(pessoa);
-        }
+        // public IActionResult Delete(int id)
+        // {
+        //     var pessoa = _Context.tb_Pessoa.Find(id);
+        //     return View(pessoa);
+        // }
+
+        // [HttpPost]
+        // public IActionResult Delete(int id, Pessoas p)
+        // {
+        //     _Context.Remove(p);
+        //     _Context.SaveChanges();
+        //     return RedirectToAction("Index");
+        // }
 
         [HttpPost]
-        public IActionResult Delete(int id, Pessoas p)
+        public IActionResult Delete(int id)
         {
+            var p = _Context.tb_Pessoa.Where(x => x.Id == id).FirstOrDefault();
             _Context.Remove(p);
             _Context.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
