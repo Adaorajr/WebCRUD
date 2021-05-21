@@ -41,13 +41,13 @@
             </td>
             <td>
 <form asp-action="Delete" asp-route-id="@item.Id" data-ajax="true" data-ajax-success="deleteItem(this)">
-    <button type="submit" class="btn btn-sm btn-danger d-none d-md-inline-block">
-        Delete
-    </button>
+    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pen"> </i></a>
+    <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info-circle"> </i></a>
+    <button type="submit"class="btn btn-sm btn-danger d-none d-md-inline-block"> <i class="fas fa-trash-alt"></i></button>
 </form>
-                <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pen"> </i></a>
+                @*<a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pen"> </i></a>
                 <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info-circle"> </i></a>
-                @*<a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash-alt"> </i> </a>*@          
+                <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash-alt"> </i> </a>*@          
             </td>
         </tr>
 }
