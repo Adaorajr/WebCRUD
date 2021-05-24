@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\webcrudapp\\WebCRUDApp.csproj": {}
+    "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\WebCRUDApp\\WebCRUDApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\webcrudapp\\WebCRUDApp.csproj": {
+    "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\WebCRUDApp\\WebCRUDApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\webcrudapp\\WebCRUDApp.csproj",
+        "projectUniqueName": "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\WebCRUDApp\\WebCRUDApp.csproj",
         "projectName": "WebCRUDApp",
-        "projectPath": "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\webcrudapp\\WebCRUDApp.csproj",
+        "projectPath": "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\WebCRUDApp\\WebCRUDApp.csproj",
         "packagesPath": "C:\\Users\\adao.junior\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\webcrudapp\\obj\\",
+        "outputPath": "C:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\WebCRUDApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -29,6 +29,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -40,6 +41,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Dapper": {
               "target": "Package",
@@ -88,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

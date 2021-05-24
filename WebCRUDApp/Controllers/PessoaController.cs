@@ -9,6 +9,7 @@ using WebCRUDApp.Models.Contexto;
 using WebCRUDApp.Models.Entidades;
 using Dapper;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebCRUDApp.Controllers
 {
@@ -23,28 +24,6 @@ namespace WebCRUDApp.Controllers
             _Context = Contexto;
             _config = config;
         }
-
-        // public IActionResult Index()
-        // {
-        //     List<FuncViewModel> ListaFuncVM = new List<FuncViewModel>();
-
-
-        //     var listaFunc = (from p in _Context.tb_Pessoa
-        //                      join c in _Context.tb_Cargo on p.CargoId equals c.CargoId
-        //                      select new { p.Id, p.Nome, p.SobreNome, p.DataNascimento, c.NomeCargo }).ToList();
-
-        //     foreach (var item in listaFunc)
-        //     {
-        //         FuncViewModel funcVM = new FuncViewModel();
-        //         funcVM.Id = item.Id;
-        //         funcVM.Nome = item.Nome;
-        //         funcVM.SobreNome = item.SobreNome;
-        //         funcVM.DataNascimento = item.DataNascimento;
-        //         funcVM.NomeCargo = item.NomeCargo;
-        //         ListaFuncVM.Add(funcVM);
-        //     }
-        //     return View(ListaFuncVM);
-        // }
         public IActionResult Index()
         {
 
@@ -74,6 +53,7 @@ namespace WebCRUDApp.Controllers
                 _Context.SaveChanges();
                 return RedirectToAction("Index");
             }
+            listaDeCargos();
 
             return View(p);
         }
@@ -121,13 +101,23 @@ namespace WebCRUDApp.Controllers
 
         public IActionResult Details(int id)
         {
-            var pessoa = _Context.tb_Pessoa.Find(id);
-            return View(pessoa);
-        }
+            string sql = $@"select p.id, p.nome, p.sobrenome, p.datanascimento, c.NomeCargo from tb_pessoa p
+                        join tb_cargo c on p.CargoId = c.CargoId
+                        where p.id = {id}";
+            using(var con = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
+            {              
+                var dap = con.QueryFirstOrDefault<FuncViewModel>(sql);
 
-        public void listaDeCargos()
+                return View(dap);
+            }            
+
+        }
+        private void listaDeCargos(object CargoSelecionado = null)
         {
-            ViewBag.Lista = new SelectList(_Context.tb_Cargo, "CargoId", "NomeCargo");
+            var CargoQuery = from c in _Context.tb_Cargo
+                                   orderby c.NomeCargo
+                                   select c;
+            ViewBag.CargoNome = new SelectList(CargoQuery.AsNoTracking(), "CargoId", "NomeCargo", CargoSelecionado);
         }
 
 

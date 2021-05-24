@@ -320,7 +320,6 @@ C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcor
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.pdb
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\WebCRUDApp.exe
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\WebCRUDApp.deps.json
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\WebCRUDApp.runtimeconfig.json
@@ -366,7 +365,6 @@ C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcor
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
@@ -378,7 +376,6 @@ C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcor
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
@@ -444,9 +441,6 @@ C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcor
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
-C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.TagHelpers.input.cache
@@ -468,3 +462,6 @@ C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcor
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.RazorTargetAssemblyInfo.cs
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.Views.pdb
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.csproj.CopyComplete
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.csproj.CoreCompileInputs.cache
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\scopedcss\bundle\WebCRUDApp.styles.css
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.genruntimeconfig.cache

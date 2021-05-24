@@ -26,6 +26,6 @@ namespace WebCRUDApp.Models.Entidades
 
         [ForeignKey("CargoId")]
         public int CargoId { get; set; }       
-        public Cargo Cargo{ get; set; }            
+        public virtual Cargo Cargo{ get; set; }            
     }
 }

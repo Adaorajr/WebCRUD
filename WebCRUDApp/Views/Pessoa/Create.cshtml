@@ -26,11 +26,14 @@
                 <label asp-for="DataNascimento" class="control-label"></label>
                 <input asp-for="DataNascimento" class="form-control" />
                 <span asp-validation-for="DataNascimento" class="text-danger"></span>
-            </div>
+            </div>        
             <div class = "form-group">
                 <label asp-for="CargoId" class="control-label"> Cargo </label>
-                <select asp-for="CargoId" class ="form-control" asp-items="ViewBag.Lista"> --Selecione o Cargo--</select>
+                <select asp-for="CargoId" class ="form-control" asp-items="ViewBag.CargoNome">
+                    <option value = ""> --Selecione o Cargo --</option>
+                    </select>
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>

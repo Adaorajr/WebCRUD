@@ -9,7 +9,8 @@ namespace WebCRUDApp.Models.Entidades
 {
     [Keyless]
     public class FuncViewModel
-    {      
+    {   
+        public int Id { get; set; }   //clase pessoa
         public string Nome { get; set; }       
         public string SobreNome { get; set; }
         [Display(Name = "Nascimento")]    
@@ -17,8 +18,9 @@ namespace WebCRUDApp.Models.Entidades
         [DataType(DataType.Date, ErrorMessage="Data em formato inválido")]       
         public DateTime DataNascimento { get; set; }
         [Display(Name = "Cargo")]
+        [Required(ErrorMessage ="O Cargo é Obrigatório!")]
         public string NomeCargo { get; set; }
-        public int Id { get; set; }
+        
       
     }
 }
