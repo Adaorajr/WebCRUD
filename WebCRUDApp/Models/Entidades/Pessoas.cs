@@ -18,8 +18,8 @@ namespace WebCRUDApp.Models.Entidades
         [Required(ErrorMessage ="O Nome é obrigatório!")]
         public string Nome { get; set; }
         [StringLength(40, MinimumLength = 2)]
-        [Required(ErrorMessage = "O SobreNome é obrigatório!")]
-        public string SobreNome { get; set; }
+        [Required(ErrorMessage = "O Sobrenome é obrigatório!")]
+        public string Sobrenome { get; set; }
         //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         [DataType(DataType.Date, ErrorMessage="Data em formato inválido")]               
         public DateTime DataNascimento { get; set; }

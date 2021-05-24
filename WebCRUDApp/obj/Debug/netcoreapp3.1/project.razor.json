@@ -14427,11 +14427,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\WebCRUDApp\\Views\\Pessoa\\Delete.cshtml",
-      "TargetPath": "Views\\Pessoa\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\adao.junior\\Documents\\Proj Pessoais\\WebCRUD\\WebCRUDApp\\Views\\Pessoa\\Edit.cshtml",
       "TargetPath": "Views\\Pessoa\\Edit.cshtml",
       "FileKind": "mvc"

@@ -12,7 +12,7 @@ namespace WebCRUDApp.Models.Entidades
     {   
         public int Id { get; set; }   //clase pessoa
         public string Nome { get; set; }       
-        public string SobreNome { get; set; }
+        public string Sobrenome { get; set; }
         [Display(Name = "Nascimento")]    
         //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         [DataType(DataType.Date, ErrorMessage="Data em formato inválido")]       

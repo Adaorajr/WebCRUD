@@ -48,46 +48,33 @@ namespace WebCRUDApp.Controllers
 
             if (ModelState.IsValid)
             {
-
                 _Context.Add(p);
                 _Context.SaveChanges();
                 return RedirectToAction("Index");
             }
             listaDeCargos();
-
             return View(p);
         }
 
         public IActionResult Edit(int id)
         {
             listaDeCargos();
-            var pessoa = _Context.tb_Pessoa.Find(id);
-            
-            return View(pessoa); 
-               
-
+            var pessoa = _Context.tb_Pessoa.Find(id);        
+            return View(pessoa);
         }
+
         [HttpPost]
         public IActionResult Edit(int id, Pessoas p)
         {
+            if(ModelState.IsValid)
+            {
             _Context.Update(p);
             _Context.SaveChanges();
             return RedirectToAction("Index");
+            }
+            listaDeCargos();
+            return View();
         }
-
-        // public IActionResult Delete(int id)
-        // {
-        //     var pessoa = _Context.tb_Pessoa.Find(id);
-        //     return View(pessoa);
-        // }
-
-        // [HttpPost]
-        // public IActionResult Delete(int id, Pessoas p)
-        // {
-        //     _Context.Remove(p);
-        //     _Context.SaveChanges();
-        //     return RedirectToAction("Index");
-        // }
 
         [HttpPost]
         public IActionResult Delete(int id)
@@ -119,8 +106,6 @@ namespace WebCRUDApp.Controllers
                                    select c;
             ViewBag.CargoNome = new SelectList(CargoQuery.AsNoTracking(), "CargoId", "NomeCargo", CargoSelecionado);
         }
-
-
     }
 }
 
