@@ -14,5 +14,7 @@ namespace WebCRUDApp.Models.Entidades
         [Required(ErrorMessage = "O Cargo é obrigatório!")]
         public string NomeCargo { get; set; }
 
+        public IEnumerable<Pessoas> Pessoa { get; set; }
+
     }
 }

@@ -308,7 +308,6 @@ C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDAp
 C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.genruntimeconfig.cache
 C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\Create.cshtml.g.cs
 C:\Users\sarin\Documents\WebCRUDApp\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Pessoa\Index.cshtml.g.cs
-C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.csprojAssemblyReference.cache
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\staticwebassets\WebCRUDApp.StaticWebAssets.Manifest.cache
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\staticwebassets\WebCRUDApp.StaticWebAssets.xml
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.MvcApplicationPartsAssemblyInfo.cache
@@ -464,3 +463,17 @@ C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcor
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.csproj.CoreCompileInputs.cache
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\scopedcss\bundle\WebCRUDApp.styles.css
 C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.genruntimeconfig.cache
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Cargo\Create.cshtml.g.cs
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Login\Login.cshtml.g.cs
+C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\Razor\Views\Login\Register.cshtml.g.cs

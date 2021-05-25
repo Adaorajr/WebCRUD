@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 using WebCRUDApp.Models.Contexto;
 using WebCRUDApp.Models.Entidades;
 using Dapper;
-using Microsoft.Data.SqlClient;
+//using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Data.SqlClient;
 
 namespace WebCRUDApp.Controllers
 {
@@ -104,7 +105,7 @@ namespace WebCRUDApp.Controllers
             var CargoQuery = from c in _Context.tb_Cargo
                                    orderby c.NomeCargo
                                    select c;
-            ViewBag.CargoNome = new SelectList(CargoQuery.AsNoTracking(), "CargoId", "NomeCargo", CargoSelecionado);
+            ViewBag.CargoNome = new SelectList(CargoQuery.AsNoTracking(),"CargoId", "NomeCargo", CargoSelecionado);
         }
     }
 }

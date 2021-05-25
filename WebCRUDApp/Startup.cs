@@ -1,13 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WebCRUDApp.Models.Contexto;
 
 namespace WebCRUDApp
@@ -25,8 +22,13 @@ namespace WebCRUDApp
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddSingleton<IConfiguration>(_ => Configuration);
-            services.AddControllersWithViews();
+            
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<Context>();
+
+            services.AddControllersWithViews();
+
 
         }
 
@@ -44,6 +46,8 @@ namespace WebCRUDApp
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

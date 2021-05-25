@@ -29,8 +29,6 @@ namespace WebCRUDApp.Controllers
 
         public IActionResult Index()
         {
-            listaDeCargos();
-            //ViewBag.Lista = new SelectList(_Context.tb_Cargo, "CargoId", "NomeCargo");
             return View();
         }
 
@@ -43,11 +41,6 @@ namespace WebCRUDApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
-        public void listaDeCargos()
-        {
-           ViewBag.Lista = new SelectList(_Context.tb_Cargo, "CargoId", "NomeCargo");
         }
     }
 
