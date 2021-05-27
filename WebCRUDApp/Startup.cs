@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebCRUDApp.Data;
+using WebCRUDApp.Data.Interfaces;
 using WebCRUDApp.Models.Contexto;
 
 namespace WebCRUDApp
@@ -26,7 +28,7 @@ namespace WebCRUDApp
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<Context>();
-
+            services.AddScoped<IPessoasRepository, PessoasRepository>();
             services.AddControllersWithViews();
 
 

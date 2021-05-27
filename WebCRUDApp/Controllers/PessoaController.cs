@@ -11,31 +11,25 @@ using Dapper;
 //using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlClient;
+using WebCRUDApp.Data.Interfaces;
 
 namespace WebCRUDApp.Controllers
 {
     public class PessoaController : Controller
     {
+        private readonly IPessoasRepository _pessoasRepository;
+        private readonly Context _ctx;
 
-        public Context _Context;
-        public IConfiguration _config;
-
-        public PessoaController(Context Contexto, IConfiguration config)
+        public PessoaController(IPessoasRepository p, Context context)
         {
-            _Context = Contexto;
-            _config = config;
+            _pessoasRepository = p;
+            _ctx = context;
         }
         public IActionResult Index()
         {
+            var p = _pessoasRepository.ListaFunc();
+            return View(p);
 
-            string sql = @"select p.id, p.Nome, p.SobreNome, p.DataNascimento, c.NomeCargo from tb_pessoa p
-                          join tb_cargo c on c.CargoId = p.CargoId";
-                                        
-            using(SqlConnection conn = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
-            {
-                var dap = conn.Query<FuncViewModel>(sql);                                                                                                                                 
-                return View (dap);                           
-            };
         }
         public IActionResult Create()
         {
@@ -46,11 +40,9 @@ namespace WebCRUDApp.Controllers
         [HttpPost]
         public IActionResult Create(Pessoas p)
         {
-
             if (ModelState.IsValid)
             {
-                _Context.Add(p);
-                _Context.SaveChanges();
+                _pessoasRepository.Salvar(p);
                 return RedirectToAction("Index");
             }
             listaDeCargos();
@@ -60,18 +52,22 @@ namespace WebCRUDApp.Controllers
         public IActionResult Edit(int id)
         {
             listaDeCargos();
-            var pessoa = _Context.tb_Pessoa.Find(id);        
-            return View(pessoa);
+            var p = _pessoasRepository.Editar(id);
+            if(p == null) 
+            {
+                return RedirectToAction("Index");
+            }
+            return View(p);
+            
         }
 
         [HttpPost]
         public IActionResult Edit(int id, Pessoas p)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-            _Context.Update(p);
-            _Context.SaveChanges();
-            return RedirectToAction("Index");
+                _pessoasRepository.Editar(id, p);
+                return RedirectToAction("index");
             }
             listaDeCargos();
             return View();
@@ -80,29 +76,23 @@ namespace WebCRUDApp.Controllers
         [HttpPost]
         public IActionResult Delete(int id)
         {
-            var p = _Context.tb_Pessoa.Where(x => x.Id == id).FirstOrDefault();
-            _Context.Remove(p);
-            _Context.SaveChanges();
-
+            if (ModelState.IsValid)
+            _pessoasRepository.Deletar(id);
             return RedirectToAction("Index");
         }
 
         public IActionResult Details(int id)
         {
-            string sql = $@"select p.id, p.nome, p.sobrenome, p.datanascimento, c.NomeCargo from tb_pessoa p
-                        join tb_cargo c on p.CargoId = c.CargoId
-                        where p.id = {id}";
-            using(var con = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
-            {              
-                var dap = con.QueryFirstOrDefault<FuncViewModel>(sql);
-
-                return View(dap);
-            }            
-
+            var p = _pessoasRepository.Detalhes(id);
+            if (p == null)
+            {
+                return RedirectToAction("Index");   
+            }
+            return View(p);
         }
         private void listaDeCargos(object CargoSelecionado = null)
         {
-            var CargoQuery = from c in _Context.tb_Cargo
+            var CargoQuery = from c in _ctx.tb_Cargo
                                    orderby c.NomeCargo
                                    select c;
             ViewBag.CargoNome = new SelectList(CargoQuery.AsNoTracking(),"CargoId", "NomeCargo", CargoSelecionado);
