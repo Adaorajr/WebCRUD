@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 
 namespace WebCRUDApp.Models.Entidades
 {
@@ -14,13 +11,10 @@ namespace WebCRUDApp.Models.Entidades
         public string Nome { get; set; }       
         public string Sobrenome { get; set; }
         [Display(Name = "Nascimento")]    
-        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         [DataType(DataType.Date, ErrorMessage="Data em formato inválido")]       
         public DateTime DataNascimento { get; set; }
         [Display(Name = "Cargo")]
         [Required(ErrorMessage ="O Cargo é Obrigatório!")]
-        public string NomeCargo { get; set; }
-        
-      
+        public string NomeCargo { get; set; }        
     }
 }

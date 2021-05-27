@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -19,17 +20,9 @@ namespace WebCRUDApp.Data
         {
             _ctx = context;
             _config = config;
-            
-
         }
-        //public PessoasRepository(Context context, IConfiguration config)
-        //{
-        //    _ctx = context;
-        //    _config = config;
-        //}
         public IEnumerable<FuncViewModel> ListaFunc()
         {
-
             string sql = @"select p.id, p.Nome, p.SobreNome, p.DataNascimento, c.NomeCargo from tb_pessoa p
                           join tb_cargo c on c.CargoId = p.CargoId";
 
@@ -38,8 +31,6 @@ namespace WebCRUDApp.Data
                 var dap = conn.Query<FuncViewModel>(sql);
                 return dap;
             }
-
-
         }
         public void Salvar(Pessoas p)
         {
@@ -49,11 +40,9 @@ namespace WebCRUDApp.Data
                 _ctx.SaveChanges();
             }
             catch (Exception)
-            {
-            }
+            {}
         }
-
-        public object Editar(int id)
+        public Pessoas Editar(int id)
         {
             var p = _ctx.tb_Pessoa.Find(id);
             return p;
@@ -65,7 +54,7 @@ namespace WebCRUDApp.Data
                 _ctx.Update(p);
                 _ctx.SaveChanges();
             }
-            catch (Exception)
+            catch (Exception) 
             { }
         }
         public void Deletar(int id)
@@ -75,18 +64,15 @@ namespace WebCRUDApp.Data
                 var p = _ctx.tb_Pessoa.Where(x => x.Id == id).FirstOrDefault();
                 _ctx.Remove(p);
                 _ctx.SaveChanges();
-
             }
             catch (Exception)
             {
                 //var text = "";
                 //text = e.Message;
             }
-
         }
         public FuncViewModel Detalhes(int id)
         {
-
             string sql = $@"select p.id, p.nome, p.sobrenome, p.datanascimento, c.NomeCargo from tb_pessoa p
                         join tb_cargo c on p.CargoId = c.CargoId
                         where p.id = {id}";
@@ -95,7 +81,17 @@ namespace WebCRUDApp.Data
                 var dap = con.QueryFirstOrDefault<FuncViewModel>(sql);
                 return dap;
             }
-
+        }
+        public IEnumerable<Cargo> listaCargos()
+        {
+            var sql = @"select*from tb_cargo c order by c.NomeCargo;";
+            using (SqlConnection conn = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
+            {
+                var dap = conn.Query<Cargo>(sql);
+                return dap;
+            }
         }
     }
 }
+    
+

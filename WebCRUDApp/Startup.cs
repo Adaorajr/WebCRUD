@@ -23,16 +23,13 @@ namespace WebCRUDApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddSingleton<IConfiguration>(_ => Configuration);
-            
+            //services.AddSingleton<IConfiguration>(_ => Configuration);           
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<Context>();
             services.AddScoped<IPessoasRepository, PessoasRepository>();
             services.AddControllersWithViews();
-
-
-        }
+       }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
