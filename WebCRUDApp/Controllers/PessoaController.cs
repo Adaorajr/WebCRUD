@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WebCRUDApp.Data.Interfaces;
-using WebCRUDApp.Models.Contexto;
 using WebCRUDApp.Models.Entidades;
 
 namespace WebCRUDApp.Controllers
@@ -9,12 +8,9 @@ namespace WebCRUDApp.Controllers
     public class PessoaController : Controller
     {
         private readonly IPessoasRepository _pessoasRepository;
-        private readonly Context _ctx;
-
-        public PessoaController(IPessoasRepository p, Context context)
+        public PessoaController(IPessoasRepository p)
         {
             _pessoasRepository = p;
-            _ctx = context;
         }
         public IActionResult Index()
         {

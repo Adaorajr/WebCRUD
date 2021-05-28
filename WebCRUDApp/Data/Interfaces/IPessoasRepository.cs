@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using WebCRUDApp.Models.Entidades;
+using WebCRUDApp.ViewModel;
 
 namespace WebCRUDApp.Data.Interfaces
 {

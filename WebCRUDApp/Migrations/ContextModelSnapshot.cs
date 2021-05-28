@@ -232,6 +232,36 @@ namespace WebCRUDApp.Migrations
                     b.ToTable("tb_Cargo");
                 });
 
+            modelBuilder.Entity("WebCRUDApp.Models.Entidades.Endereco", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("bairro")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("cep")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("complemento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("logradouro")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("numero")
+                        .HasColumnType("int");
+
+                    b.Property<string>("uf")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Endereco");
+                });
+
             modelBuilder.Entity("WebCRUDApp.Models.Entidades.Pessoas", b =>
                 {
                     b.Property<int>("Id")
@@ -255,9 +285,14 @@ namespace WebCRUDApp.Migrations
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
 
+                    b.Property<int?>("enderecoid")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CargoId");
+
+                    b.HasIndex("enderecoid");
 
                     b.ToTable("tb_Pessoa");
                 });
@@ -321,7 +356,13 @@ namespace WebCRUDApp.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("WebCRUDApp.Models.Entidades.Endereco", "endereco")
+                        .WithMany()
+                        .HasForeignKey("enderecoid");
+
                     b.Navigation("Cargo");
+
+                    b.Navigation("endereco");
                 });
 
             modelBuilder.Entity("WebCRUDApp.Models.Entidades.Cargo", b =>

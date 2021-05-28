@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -9,6 +8,7 @@ using System.Linq;
 using WebCRUDApp.Data.Interfaces;
 using WebCRUDApp.Models.Contexto;
 using WebCRUDApp.Models.Entidades;
+using WebCRUDApp.ViewModel;
 
 namespace WebCRUDApp.Data
 {
@@ -40,7 +40,7 @@ namespace WebCRUDApp.Data
                 _ctx.SaveChanges();
             }
             catch (Exception)
-            {}
+            { }
         }
         public Pessoas Editar(int id)
         {
@@ -66,10 +66,7 @@ namespace WebCRUDApp.Data
                 _ctx.SaveChanges();
             }
             catch (Exception)
-            {
-                //var text = "";
-                //text = e.Message;
-            }
+            { }
         }
         public FuncViewModel Detalhes(int id)
         {

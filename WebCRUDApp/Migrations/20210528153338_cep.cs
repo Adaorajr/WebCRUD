@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebCRUDApp.Migrations
 {
-    public partial class UserLogin : Migration
+    public partial class cep : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -44,6 +44,24 @@ namespace WebCRUDApp.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Endereco",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    cep = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    logradouro = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    numero = table.Column<int>(type: "int", nullable: false),
+                    complemento = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    bairro = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    uf = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Endereco", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -174,11 +192,18 @@ namespace WebCRUDApp.Migrations
                     Nome = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
                     Sobrenome = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
                     DataNascimento = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CargoId = table.Column<int>(type: "int", nullable: false)
+                    CargoId = table.Column<int>(type: "int", nullable: false),
+                    enderecoid = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_tb_Pessoa", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_tb_Pessoa_Endereco_enderecoid",
+                        column: x => x.enderecoid,
+                        principalTable: "Endereco",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_tb_Pessoa_tb_Cargo_CargoId",
                         column: x => x.CargoId,
@@ -230,6 +255,11 @@ namespace WebCRUDApp.Migrations
                 name: "IX_tb_Pessoa_CargoId",
                 table: "tb_Pessoa",
                 column: "CargoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tb_Pessoa_enderecoid",
+                table: "tb_Pessoa",
+                column: "enderecoid");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -257,6 +287,9 @@ namespace WebCRUDApp.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Endereco");
 
             migrationBuilder.DropTable(
                 name: "tb_Cargo");
