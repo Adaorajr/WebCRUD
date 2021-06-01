@@ -12,5 +12,6 @@
     <WebStackScaffolding_LayoutPageFile />
     <ShowAllFiles>false</ShowAllFiles>
     <WebStackScaffolding_DbContextTypeFullName>WebCRUDApp.Models.Contexto.Context</WebStackScaffolding_DbContextTypeFullName>
+    <NameOfLastUsedPublishProfile>C:\Users\adao.junior\Documents\Proj Pessoais\WebCRUD\WebCRUDApp\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

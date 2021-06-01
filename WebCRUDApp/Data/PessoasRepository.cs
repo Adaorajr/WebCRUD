@@ -1,10 +1,12 @@
 ﻿using Dapper;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Threading.Tasks;
 using WebCRUDApp.Data.Interfaces;
 using WebCRUDApp.Models.Contexto;
 using WebCRUDApp.Models.Entidades;
@@ -25,13 +27,25 @@ namespace WebCRUDApp.Data
         {
             string sql = @"select p.id, p.Nome, p.SobreNome, p.DataNascimento, c.NomeCargo from tb_pessoa p
                           join tb_cargo c on c.CargoId = p.CargoId";
-
             using (SqlConnection conn = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
             {
                 var dap = conn.Query<FuncViewModel>(sql);
                 return dap;
             }
         }
+        //public IEnumerable<FuncViewModel> nomePessoa(string search)
+        //{
+        //    return _ctx.tb_Pessoa.Where(p => p.Nome == search)
+        //        .Select(p => new FuncViewModel
+        //        {
+        //            Id = p.Id,
+        //            Nome = p.Nome,
+        //            Sobrenome = p.Sobrenome,
+        //            DataNascimento = p.DataNascimento,
+        //            NomeCargo = p.Cargo.NomeCargo
+        //        })
+        //        .AsEnumerable<FuncViewModel>();
+        //}
         public void Salvar(Pessoas p)
         {
             try
@@ -44,10 +58,15 @@ namespace WebCRUDApp.Data
         }
         public Pessoas Editar(int id)
         {
-            var p = _ctx.tb_Pessoa.Find(id);
-            return p;
+            var edit = _ctx.tb_Pessoa.Where(p => p.Id == id)
+                        .Include(p => p.endereco)
+                        .Include(p => p.Cargo)
+                        .FirstOrDefault();
+            return edit;
+            //var p = _ctx.tb_Pessoa.Find(id);
+            //return p;
         }
-        public void Editar(int id, Pessoas p)
+        public void Editar(Pessoas p)
         {
             try
             {

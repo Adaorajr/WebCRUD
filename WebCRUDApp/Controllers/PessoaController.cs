@@ -1,19 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 using WebCRUDApp.Data.Interfaces;
+using WebCRUDApp.Models.Contexto;
 using WebCRUDApp.Models.Entidades;
+using WebCRUDApp.ViewModel;
 
 namespace WebCRUDApp.Controllers
 {
     public class PessoaController : Controller
     {
         private readonly IPessoasRepository _pessoasRepository;
+        
         public PessoaController(IPessoasRepository p)
         {
             _pessoasRepository = p;
         }
         public IActionResult Index()
-        {
+        {       
             var p = _pessoasRepository.ListaFunc();
             return View(p);
         }
@@ -44,11 +50,11 @@ namespace WebCRUDApp.Controllers
             return View(p);
         }
         [HttpPost]
-        public IActionResult Edit(int id, Pessoas p)
+        public IActionResult Edit(Pessoas p)
         {
             if (ModelState.IsValid)
             {
-                _pessoasRepository.Editar(id, p);
+                _pessoasRepository.Editar(p);
                 return RedirectToAction("index");
             }
             listaDeCargos();
