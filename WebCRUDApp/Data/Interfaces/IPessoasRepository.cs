@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using WebCRUDApp.Models.Entidades;
 using WebCRUDApp.ViewModel;
 

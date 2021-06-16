@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Linq;
 using WebCRUDApp.Data.Interfaces;
-using WebCRUDApp.Models.Contexto;
 using WebCRUDApp.Models.Entidades;
-using WebCRUDApp.ViewModel;
+using X.PagedList;
 
 namespace WebCRUDApp.Controllers
 {
@@ -18,10 +15,12 @@ namespace WebCRUDApp.Controllers
         {
             _pessoasRepository = p;
         }
-        public IActionResult Index()
-        {       
+        public IActionResult Index(int? pagina)
+        {
             var p = _pessoasRepository.ListaFunc();
-            return View(p);
+            const int itensPorPagina = 5;
+            int numeroPagina = (pagina ?? 1);
+            return View(p.ToPagedList(numeroPagina, itensPorPagina));
         }
         public IActionResult Create()
         {
@@ -60,7 +59,9 @@ namespace WebCRUDApp.Controllers
             listaDeCargos();
             return View();
         }
-        [HttpPost]
+        //[HttpPost]
+        [HttpGet]
+        [Route("Pessoa/Delete")]
         public IActionResult Delete(int id)
         {
             if (ModelState.IsValid)

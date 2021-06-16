@@ -16,7 +16,7 @@ namespace WebCRUDApp.Models.Entidades
         [StringLength(40, MinimumLength = 2)]
         [Required(ErrorMessage = "O Sobrenome é obrigatório!")]
         public string Sobrenome { get; set; }
-        [DataType(DataType.Date, ErrorMessage="Data em formato inválido")]               
+        [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
         public DateTime DataNascimento { get; set; }
         [ForeignKey("CargoId")]
         public int CargoId { get; set; }       

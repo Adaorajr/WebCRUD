@@ -27,5 +27,10 @@ namespace WebCRUDApp.Controllers
             _ctx.SaveChanges();            
             return RedirectToAction("Create", "Pessoa");
         }
+        public PartialViewResult partialget() 
+        {
+            return PartialView("_partialCargo");
+        }       
+       
     }
 }

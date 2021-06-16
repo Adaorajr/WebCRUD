@@ -1,16 +1,15 @@
 ﻿using Dapper;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Threading.Tasks;
 using WebCRUDApp.Data.Interfaces;
 using WebCRUDApp.Models.Contexto;
 using WebCRUDApp.Models.Entidades;
 using WebCRUDApp.ViewModel;
+
 
 namespace WebCRUDApp.Data
 {
@@ -89,8 +88,9 @@ namespace WebCRUDApp.Data
         }
         public FuncViewModel Detalhes(int id)
         {
-            string sql = $@"select p.id, p.nome, p.sobrenome, p.datanascimento, c.NomeCargo from tb_pessoa p
+            string sql = $@"select p.id, p.nome, p.sobrenome, p.datanascimento, c.NomeCargo, e.cep, e.logradouro, e.numero, e.complemento, e.bairro, e.uf  from tb_pessoa p
                         join tb_cargo c on p.CargoId = c.CargoId
+                        join endereco e on p.enderecoid = e.id
                         where p.id = {id}";
             using (var con = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
             {

@@ -1,4 +1,6 @@
-﻿@model IEnumerable<WebCRUDApp.ViewModel.FuncViewModel>
+﻿@*@model IEnumerable<WebCRUDApp.ViewModel.FuncViewModel>*@
+@model X.PagedList.PagedList<WebCRUDApp.ViewModel.FuncViewModel>
+@using X.PagedList.Mvc.Core;
 
 @{
     ViewData["Title"] = "Index";
@@ -8,30 +10,35 @@
 </p>
 @using (Html.BeginForm())
 {
-    <p>
-         Procurar pelo Nome: @Html.TextBox("search")
-        <input type="submit" value="Search" />
-    </p>
+    <input id="srch" type="text" placeholder="Procurar.." />
 }
+
+
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sobrenome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataNascimento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NomeCargo)
-            </th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>DataNascimento</th>
+            <th>Cargo</th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sobrenome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataNascimento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomeCargo)
+                </th>*@
             <th></th>
         </tr>
     </thead>
     <tbody>
+
         @foreach (var item in Model)
         {
             <tr>
@@ -48,10 +55,11 @@
                     @Html.DisplayFor(modelItem => item.NomeCargo)
                 </td>
                 <td>
-                    <form asp-action="Delete" asp-route-id="@item.Id" data-ajax="true" data-ajax-success="deleteItem(this)">
+                    <form>
+                        @*<form asp-action="Delete" asp-route-id="@item.Id" data-ajax="true" data-ajax-success="deleteItem(this)">*@
                         <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pen"> </i></a>
                         <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info-circle"> </i></a>
-                        <button type="submit" class="btn btn-sm btn-danger d-none d-md-inline-block"> <i class="fas fa-trash-alt"></i></button>
+                        <a class="btn btn-sm btn-danger d-none d-md-inline-block" asp-action="Delete" asp-route-id="@item.Id" onclick="deletePerson(@item.Id)"> <i class="fas fa-trash-alt"></i> </a>
                     </form>
                     @*<a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pen"> </i></a>
                         <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info-circle"> </i></a>
@@ -59,6 +67,9 @@
                 </td>
 
             </tr>
+
         }
     </tbody>
 </table>
+@Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina }))
+
