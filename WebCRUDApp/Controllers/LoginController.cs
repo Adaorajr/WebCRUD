@@ -86,8 +86,11 @@ namespace WebCRUDApp.Controllers
                 {
                     return RedirectToAction("Index", "Home");
                 }
-
-                ModelState.AddModelError(string.Empty, "Login Inválido");
+                else
+                {
+                    TempData["Msg"] = "Usuário ou Senha inválido!";
+                }
+                //ModelState.AddModelError(string.Empty, "Login Inválido");
 
             }
             return View(user);

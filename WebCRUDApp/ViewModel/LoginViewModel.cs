@@ -4,10 +4,10 @@ namespace WebCRUDApp.ViewModel
 {
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Informe o e-mail!")]
         [EmailAddress]
         public string Email { get; set; }
-        [Required(ErrorMessage ="Digite sua Senha Corretamente")]
+        [Required(ErrorMessage ="Informe a senha!")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 

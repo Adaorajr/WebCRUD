@@ -1,6 +1,31 @@
 ﻿////function deleteItem(form) {
 ////    $(form).parents('li').remove();
 ////}
+
+
+
+
+//$('#butj').click(function () {
+//    var formData = {
+//        Email: $('#email').val(),
+//        Password: $('#password').val(),
+//        RememberMe: $('#remember').val(),
+//    };
+//    $.ajax({
+//        url: 'Login/Login',
+//        data: formData,
+//        type: 'POST',
+
+//        success: function () {
+//            alert('sucesso');
+//        },
+//        error: function () {
+//            alert('login inválido.');
+//        },
+//    });
+
+//});
+
 function deletePerson(id) {
     if (confirm('Deseja realmente excluir essa Pessoa?')) {
         $.ajax({
@@ -36,6 +61,19 @@ $("#cep").focusout(function () {
             $("#cidade").val(resposta.localidade);
             $("#uf").val(resposta.uf);
             $("#numero").focus();
+        },
+        error: function (data) {
+            alert('dados não encontrados');
+            $("#cep").val('');
+
+        },
+        beforeSend: function () {
+            $('.loader').show();
+        },
+        complete: function () {
+            $('.loader').hide();
         }
+
     });
+
 });

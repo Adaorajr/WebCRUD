@@ -8,23 +8,23 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <style>
-        .table{
+        .table {
             background-color: #E8E8E8;
         }
+
         .float-container {
             border: 3px solid #fff;
             padding: 0px;
         }
-        .cargoID{
+
+        .cargoID {
             float: left;
-            height: auto;  
-         }
-        #cargoNovo{
+            height: auto;
+        }
+
+        #cargoNovo {
             float: right;
-            
-
-         }
-
+        }
     </style>
 </head>
 <body>
@@ -36,13 +36,17 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <div class="navbar-collapse collapse d-sm-inline-flex">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <a class="navbar-brand" asp-area="" asp-controller="Login" asp-action="Logout"><i class="fas fa-power-off"></i></a>
-                        <ul class="navbar-nav flex-grow-1">
+                        <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Pessoa" asp-action="Index">Lista de Colaboradores</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="navbar-brand" asp-area="" asp-controller="Login" asp-action="Logout"><i class="fas fa-power-off"></i></a>
                             </li>
                         </ul>
                     }
@@ -56,8 +60,6 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Register"> Registrar </a>
                             </li>
                         </ul>
-
-
                     }
                 </div>
             </div>

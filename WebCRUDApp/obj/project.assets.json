@@ -9018,7 +9018,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\adao.junior\\.nuget\\packages\\": {}
+    "C:\\Users\\adao.junior\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -9029,8 +9030,12 @@
       "packagesPath": "C:\\Users\\adao.junior\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\adao.junior\\Documents\\Pessoais\\WebCRUD\\WebCRUDApp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\adao.junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

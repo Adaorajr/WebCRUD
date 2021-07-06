@@ -341,3 +341,4 @@ C:\Users\adao.junior\Documents\Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3
 C:\Users\adao.junior\Documents\Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.dll
 C:\Users\adao.junior\Documents\Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.pdb
 C:\Users\adao.junior\Documents\Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.genruntimeconfig.cache
+C:\Users\adao.junior\Documents\Pessoais\WebCRUD\WebCRUDApp\obj\Debug\netcoreapp3.1\WebCRUDApp.csproj.AssemblyReference.cache
