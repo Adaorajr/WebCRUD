@@ -1,11 +1,7 @@
 ﻿////function deleteItem(form) {
 ////    $(form).parents('li').remove();
 ////}
-//teste
 
-//teste pull
-//teste pull2
-//teste pull3
 
 //$('#butj').click(function () {
 //    var formData = {
@@ -72,9 +68,10 @@ $("#cep").focusout(function () {
         beforeSend: function () {
             $('.loader').show();
         },
-
+                
+        complete: function () {
+            $('.loader').hide();
+        }
     });
 
 });
-
-$(document).ready(function(){});
