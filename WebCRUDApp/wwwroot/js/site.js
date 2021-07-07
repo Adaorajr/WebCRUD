@@ -71,9 +71,6 @@ $("#cep").focusout(function () {
         beforeSend: function () {
             $('.loader').show();
         },
-        complete: function () {
-            $('.loader').hide();
-        }
 
     });
 
