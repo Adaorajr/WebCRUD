@@ -78,3 +78,5 @@ $("#cep").focusout(function () {
     });
 
 });
+
+$(document).ready(function(){});
