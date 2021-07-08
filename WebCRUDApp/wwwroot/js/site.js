@@ -2,8 +2,12 @@
 ////    $(form).parents('li').remove();
 ////}
 
+<<<<<<< HEAD
 //test
 //branchmestre
+=======
+//ram master
+>>>>>>> 4c96b7bcfa38c136374c7b6d29fe052d537589ac
 
 
 //$('#butj').click(function () {
