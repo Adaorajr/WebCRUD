@@ -1,11 +1,10 @@
 ﻿////function deleteItem(form) {
 ////    $(form).parents('li').remove();
 ////}
-//teste
 
-//teste pull
-//teste pull2
-//teste pull3
+//ram Dev
+
+
 
 //$('#butj').click(function () {
 //    var formData = {
