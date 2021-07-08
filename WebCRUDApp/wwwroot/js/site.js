@@ -2,7 +2,11 @@
 ////    $(form).parents('li').remove();
 ////}
 
+<<<<<<< HEAD
 //test
+=======
+//ram Dev
+>>>>>>> 48d697bb6a87e52eb73f3e85682c106d6b90738c
 
 
 
@@ -78,3 +82,8 @@ $("#cep").focusout(function () {
     });
 
 });
+<<<<<<< HEAD
+=======
+
+$(document).ready(function(){});
+>>>>>>> 48d697bb6a87e52eb73f3e85682c106d6b90738c
